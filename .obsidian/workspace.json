@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "other/git分布式仓库管理/git深入及原理.md",
-                "mode": "source",
+                "file": "other/git分布式仓库管理详解/git深入及原理.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "other/git分布式仓库管理/git深入及原理.md",
+                "file": "other/git分布式仓库管理详解/git深入及原理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "other/git分布式仓库管理/git深入及原理.md",
+                "file": "other/git分布式仓库管理详解/git深入及原理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "other/git分布式仓库管理/git深入及原理.md"
+                "file": "other/git分布式仓库管理详解/git深入及原理.md"
               }
             }
           }
@@ -148,9 +148,9 @@
   },
   "active": "7123a74352ae6ee9",
   "lastOpenFiles": [
+    "other/git分布式仓库管理详解/git基本操作.md",
+    "other/git分布式仓库管理详解/git深入及原理.md",
     "现代CMake",
-    "other/git分布式仓库管理/git基本操作.md",
-    "other/git分布式仓库管理/git深入及原理.md",
     "ffmpeg/音频原理.md",
     "ffmpeg/图像格式-基于QT和SDL渲染.md",
     "ffmpeg/视频编码原理.md",
@@ -172,7 +172,7 @@
     "ffmpeg/image_note/Pasted image 20240819142334.png",
     "README.md",
     "other/image_note_2",
-    "other/git分布式仓库管理",
+    "other/git分布式仓库管理详解",
     "后端/未命名.md",
     "ffmpeg/FFmpeg解封装.md",
     "ffmpeg/image_note",
