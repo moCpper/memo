@@ -70,3 +70,22 @@ E:.
     │  └─origin
     └─tags
 ```
+然后使用git branch --delete dev删除dev分支
+```bash
+$ git branch --delete dev
+Deleted branch dev (was b00240d).
+```
+**当删除分支后，之前在此分支上产生的tree，commit或是blob依旧存在。**
+```bash
+刘家豪@LAPTOP-71AV808L MINGW64 /e/github (master)
+$ git cat-file -p b00240d
+tree aeeaf8c727843c32a5e5500b987f13d57b51f6a2
+author moCpper <2540698708@qq.com> 1736775019 +0800
+committer moCpper <2540698708@qq.com> 1736775019 +0800
+
+push
+
+刘家豪@LAPTOP-71AV808L MINGW64 /e/github (master)
+$ git cat-file -p aeeaf8c
+040000 tree f894983e3bc5a8a049c47c5e2f3949eba920735b    thread_pool
+```
