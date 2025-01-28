@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "other/git分布式仓库管理详解/git深入及原理.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               }
             }
@@ -148,6 +148,7 @@
   },
   "active": "7123a74352ae6ee9",
   "lastOpenFiles": [
+    "other/image_note_2/Pasted image 20250128212959.png",
     "other/git分布式仓库管理详解/git基本操作.md",
     "other/git分布式仓库管理详解/git深入及原理.md",
     "现代CMake",
