@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "后端/git分布式仓库管理/git.md",
+                "file": "其他/git分布式仓库管理/git深入.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "后端/git分布式仓库管理/git.md",
+                "file": "其他/git分布式仓库管理/git深入.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "后端/git分布式仓库管理/git.md",
+                "file": "其他/git分布式仓库管理/git深入.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "后端/git分布式仓库管理/git.md"
+                "file": "其他/git分布式仓库管理/git深入.md"
               }
             }
           }
@@ -148,33 +148,34 @@
   },
   "active": "7123a74352ae6ee9",
   "lastOpenFiles": [
-    "后端/image_note_2/Pasted image 20240909203900.png",
-    "后端/image_note_2/Pasted image 20240909203636.png",
-    "后端/git分布式仓库管理/git.md",
-    "后端/image_note_2/Pasted image 20240909201658.png",
+    "其他/git分布式仓库管理/git.md",
+    "其他/git分布式仓库管理/git深入.md",
+    "其他/image_note_2/Pasted image 20240908211241.png",
+    "其他/image_note_2/Pasted image 20240908213044.png",
+    "其他/image_note_2/Pasted image 20240908224622.png",
+    "其他/image_note_2/Pasted image 20240909201658.png",
+    "其他/image_note_2/Pasted image 20240909203636.png",
+    "其他/image_note_2/Pasted image 20240909203900.png",
+    "ffmpeg/图像格式_基于QT和SDL渲染.md",
+    "ffmpeg/视频软解码和硬解码.md",
+    "ffmpeg/视频编码原理.md",
+    "ffmpeg/AVFrame视频渲染.md",
+    "ffmpeg/FFmpeg像素格式转换和多路YUV_RGB渲染.md",
+    "ffmpeg/FFmpeg封装和解封装.md",
+    "ffmpeg/ffmpeg_gsoap_onvif探测和onvif协议相机设备.md",
+    "ffmpeg/音频原理.md",
     "ffmpeg/image_note/Pasted image 20240819160738.png",
     "ffmpeg/image_note/Pasted image 20240819142334.png",
     "ffmpeg/image_note/Pasted image 20240818085949.png",
     "ffmpeg/image_note/Pasted image 20240816185904.png",
-    "后端/image_note_2/Pasted image 20240908224622.png",
-    "ffmpeg/视频编码原理.md",
-    "ffmpeg/FFmpeg封装和解封装.md",
-    "ffmpeg/视频软解码和硬解码.md",
-    "后端/image_note_2/Pasted image 20240908211241.png",
-    "后端/image_note_2/Pasted image 20240908213044.png",
-    "ffmpeg/图像格式_基于QT和SDL渲染.md",
-    "ffmpeg/音频原理.md",
-    "ffmpeg/AVFrame视频渲染.md",
     "README.md",
-    "后端/image_note_2",
-    "ffmpeg/FFmpeg像素格式转换和多路YUV_RGB渲染.md",
-    "后端/git分布式仓库管理",
+    "其他/image_note_2",
+    "其他/git分布式仓库管理",
     "后端/未命名.md",
-    "ffmpeg/ffmpeg_gsoap_onvif探测和onvif协议相机设备.md",
     "ffmpeg/RTSP网络流媒体协议.md",
     "ffmpeg/FFmpeg解封装.md",
     "ffmpeg/image_note",
     "ffmpeg",
-    "后端"
+    "其他"
   ]
 }
