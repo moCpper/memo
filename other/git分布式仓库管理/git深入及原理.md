@@ -125,3 +125,17 @@ push
 $ git cat-file -p aeeaf8c
 040000 tree f894983e3bc5a8a049c47c5e2f3949eba920735b    thread_pool
 ```
+
+## detached HEAD
+**Detached HEAD（分离头指针）** 是 Git 中的一个特殊状态，表示 `HEAD` 指针直接指向某个具体的 **提交（Commit）**，而非指向一个 **分支（Branch）**。此状态常见于查看历史提交或临时实验代码时。
+在checkout后跟上具体的commit哈希即可实现：
+```bash
+git checkout b00240d35c947
+```
+建议当HEAD指向某个特定commit时，创建新的分支进行操作，如：
+```bash
+git checkout -b tmp
+```
+此时新的分支上HEAD指向了这次commit。
+当分支被误删除后，分支所产生的commit并没有被删除，此时使用这种方式可以快速定位到之前没来得及操作的commit上。
+## 
