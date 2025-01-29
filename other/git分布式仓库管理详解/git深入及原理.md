@@ -188,3 +188,6 @@ Date:   Mon Jan 13 21:30:19 2025 +0800
 若在本地commit之后，远程master分支与本地master不同步，用git log验证，效果可能如下：
 ![[Pasted image 20250128212959.png]]
 通过git push origin master实现同步
+
+## fast forward合并
+
