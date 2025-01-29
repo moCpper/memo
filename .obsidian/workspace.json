@@ -16,10 +16,25 @@
                 "file": "other/git分布式仓库管理详解/git深入及原理.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "git深入及原理"
+            }
+          },
+          {
+            "id": "113a1532cd8c1794",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.7"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.7"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -39,7 +54,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -54,7 +71,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
@@ -62,7 +81,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           }
         ]
@@ -93,7 +114,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "git深入及原理 的反向链接列表"
             }
           },
           {
@@ -105,7 +128,9 @@
                 "file": "other/git分布式仓库管理详解/git深入及原理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "git深入及原理 的出链列表"
             }
           },
           {
@@ -116,7 +141,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           },
           {
@@ -126,7 +153,9 @@
               "type": "outline",
               "state": {
                 "file": "other/git分布式仓库管理详解/git深入及原理.md"
-              }
+              },
+              "icon": "lucide-list",
+              "title": "git深入及原理 的大纲"
             }
           }
         ]
@@ -146,7 +175,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "7123a74352ae6ee9",
+  "active": "113a1532cd8c1794",
   "lastOpenFiles": [
     "other/git分布式仓库管理详解/git基本操作.md",
     "other/git分布式仓库管理详解/git深入及原理.md",
