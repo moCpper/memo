@@ -189,5 +189,7 @@ Date:   Mon Jan 13 21:30:19 2025 +0800
 ![[Pasted image 20250128212959.png]]
 通过git push origin master实现同步
 
-## fast forward合并
+## git rebase(变基)
+
+
 
