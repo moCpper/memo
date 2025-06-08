@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "other/git分布式仓库管理详解/git深入及原理.md",
+                "file": "草稿（题目待定）.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "git深入及原理"
+              "title": "草稿（题目待定）"
             }
           }
         ],
@@ -180,6 +180,7 @@
   "active": "113a1532cd8c1794",
   "lastOpenFiles": [
     "other/git分布式仓库管理详解/git基本操作.md",
+    "草稿（题目待定）.md",
     "other/git分布式仓库管理详解/git深入及原理.md",
     "ffmpeg/音频原理.md",
     "ffmpeg/ffmpeg_gsoap_onvif探测和onvif协议相机设备.md",
