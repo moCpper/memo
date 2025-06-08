@@ -1,4 +1,4 @@
-# [memo] 
+# memo
 
 📝 **Personal Notes Repository**  
 > 一个随心记录想法、代码片段和学习笔记的地方，非正式且持续更新。
