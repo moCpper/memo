@@ -34,9 +34,21 @@
               "icon": "lucide-file",
               "title": "草稿（题目待定）"
             }
+          },
+          {
+            "id": "f1fd09a91e70a494",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.10"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.10"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -55,7 +67,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -177,23 +190,25 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "113a1532cd8c1794",
+  "active": "f1fd09a91e70a494",
   "lastOpenFiles": [
-    "other/git分布式仓库管理详解/git基本操作.md",
-    "草稿（题目待定）.md",
+    "视觉开发必知.md",
     "other/git分布式仓库管理详解/git深入及原理.md",
-    "ffmpeg/音频原理.md",
-    "ffmpeg/ffmpeg_gsoap_onvif探测和onvif协议相机设备.md",
-    "ffmpeg/FFmpeg像素格式转换和多路YUV_RGB渲染.md",
+    "ffmpeg/视频编码原理.md",
     "ffmpeg/视频软解码和硬解码.md",
     "ffmpeg/图像格式-基于QT和SDL渲染.md",
-    "ffmpeg/视频编码原理.md",
-    "ffmpeg/AVFrame视频渲染.md",
     "ffmpeg/FFmpeg封装和解封装.md",
+    "other/git分布式仓库管理详解/git基本操作.md",
+    "草稿（题目待定）.md",
+    "README.md",
+    "ffmpeg/RTSP网络流媒体协议.md",
+    "ffmpeg/FFmpeg像素格式转换和多路YUV_RGB渲染.md",
+    "ffmpeg/音频原理.md",
+    "ffmpeg/AVFrame视频渲染.md",
+    "ffmpeg/ffmpeg_gsoap_onvif探测和onvif协议相机设备.md",
     "other/image_note_2/Pasted image 20250128212959.png",
     "现代CMake",
     "other/image_note_2/Pasted image 20250128151942.png",
-    "ffmpeg/RTSP网络流媒体协议.md",
     "ffmpeg/image_note/Pasted image 20240806203245.png",
     "other/image_note_2/Pasted image 20240908211241.png",
     "other/image_note_2/Pasted image 20240908213044.png",
@@ -202,7 +217,6 @@
     "other/image_note_2/Pasted image 20240909203636.png",
     "other/image_note_2/Pasted image 20240909203900.png",
     "ffmpeg/image_note/Pasted image 20240819160738.png",
-    "README.md",
     "other/image_note_2",
     "other/git分布式仓库管理详解",
     "后端/未命名.md",
