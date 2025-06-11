@@ -28,14 +28,23 @@ int main() {
 **统一工具链以避免此类问题的发生。**  
 
 `win`与`linux`下动态库的路径搜索行为差异。   
-win下,`.dll`的搜索路径： 
-- .exe当前路径  
--  系统路径`%SystemRoot%\System32`（64 位系统）或 `%SystemRoot%\SysWOW64`（32 位兼容目录）。
-- Path环境变量  
-linux下,`.so`搜索路径： 
-- 通过 `-Wl,-rpath,<path>` 嵌入到 ELF 中的路径（**优先级最高**）
-- 用户临时指定的路径（例如 `export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH`）。
-- `/lib`、`/usr/lib`、`/lib64`、`/usr/lib64` 等。
+
+**Windows 下 `.dll` 的搜索路径：**
+1. 可执行文件（.exe）当前目录
+2. 系统路径  
+   - 64 位系统：`%SystemRoot%\System32`
+   - 32 位兼容目录：`%SystemRoot%\SysWOW64`
+3. `Path` 环境变量中指定的目录
+
+**Linux 下 `.so` 的搜索路径：**
+1. 通过 `-Wl,-rpath,<path>` 嵌入到 ELF 文件中的路径（**优先级最高**）
+2. 用户临时指定的路径（如 `export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH`）
+3. 系统默认路径  
+   - `/lib`
+   - `/usr/lib`
+   - `/lib64`
+   - `/usr/lib64`
+
 linux下默认不从 `. `路径下进行.so搜索，需到`LD_LIBRARY_PATH` 或 `-rpath` 显式添加，在实际部署程序时可通过编写脚本将库安装到目标平台的系统路径下或是在编译时确定好编译选项。
 推荐通过`dlopen`在运行时加载对应的`.so`：
 ```cpp
