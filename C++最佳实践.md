@@ -27,11 +27,35 @@ int main() {
 上述代码可能崩溃的原因在于，MSVC 实现的 `std::string` 与 GCC/Clang 的实现不同（例如成员变量顺序或其他实现细节），导致 ABI 及内存布局不一致，从而引发崩溃。  
 **统一工具链以避免此类问题的发生。**
 
----
-### shared_ptr
+`win`与`linux`下动态库的路径搜索行为差异：
+win与linux下`.dll`/`.so`搜索路径：
+在win下,`.dll`的搜索路径:
+ - .exe当前路径
+ -  系统路径`%SystemRoot%\System32`（64 位系统）或 `%SystemRoot%\SysWOW64`（32 位兼容目录）。
+ - Path环境变量
+在linux下,`.so`搜索路径:
+- 通过 `-Wl,-rpath,<path>` 嵌入到 ELF 中的路径（**优先级最高**）
+- 用户临时指定的路径（例如 `export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH`）。
+- `/lib`、`/usr/lib`、`/lib64`、`/usr/lib64` 等。
+linux下默认不从 `. `路径下进行.so搜索，需到`LD_LIBRARY_PATH` 或 `-rpath` 显式添加，在实际部署程序时可通过编写脚本将库安装到目标平台的系统路径下或是在编译时确定好编译选项。
+推荐通过`dlopen`在运行时加载对应的`.so`：
+```cpp
+void* dl_handle = dlopen("./libcamera.so", RTLD_LAZY | RTLD_GLOBAL);
+if(!dl_handle){
+	std::cerr << "libcamera open err!\n";
+    fprintf(stderr, "dlopen failed: %s\n", dlerror());
+}
+// 通过dlsym(dl_handle,..);获取指定符号的地址
+dlclose(dl_handle);
+```
+win中对应的函数为`LoadLibraryEx`|`LoadLibrary`|`GetProcAddress`|`FreeLibrary`
 
-从 C++11 开始，推荐使用 `std::shared_ptr` 或 `std::unique_ptr` 来管理资源，而非直接使用裸指针。这些智能指针基于` RAII`设计思想，通过析构函数自动释放资源，从而有效避免内存泄漏。  
-然而，滥用智能指针也可能引发资源泄漏问题。例如：
+在win下使用`protobuf`时，需要在`.h`中显示添加宏`#define PROTOBUF_USE_DLLS`，表示以`dll`的形式导入其中的函数(`__declspec(dllimport)`),否则会发生链接错误(linux下通常不需要显示指定导入导出)。
+
+---
+### std::shared_ptr
+
+考虑以下代码：
 
 ```c++
 // 假设 func 用来执行相关操作并返回一个值
@@ -42,7 +66,7 @@ int main() {
 }
 ```
 
-上述代码看似合理，但却忽略了**指令重排**问题。在运行中，一个函数的实参必须先被计算，这个函数才会开始执行。所以在调用 `do_something` 之前，必须执行以下操作：
+上述代码看似合理，却忽略了**指令重排**问题。在运行中，一个函数的实参必须先被计算，这个函数才会开始执行。所以在调用 `do_something` 之前，必须执行以下操作：
 -  执行 `func()` 并获取返回值。
 -  执行表达式 `new A`。
 -  调用 `std::shared_ptr<A>` 的构造函数接管表达式 `new A` 返回的指针。
@@ -182,6 +206,7 @@ for(int i = 0; i < 10; i++){
 ```
 把`int`替换为`std::string`后依旧需要显示开始生存期，因为其为非平凡类型。
 #### std::launder
+
 `std::launder`函数对指针进行清洗，就像洗钱一样，对指针的来源进行"清洗"以阻止编译器分析来源。
 `std::launder`主要用于解决生存期问题，`std::launder(T* p)` 接收一个指向地址 X 的指针 p，返回仍在生存期内的位于地址 X 的对象的指针。也就是说，从旧对象的指针中获取新对象的指针。
 该函数的典型用途是，对同一个地址进行`placement new`后，因为原有地址上的对象X已结束生存期，虽然指针指向的是同一个地址X，但不再是合法访问，此时要么使用 placement new 返回的新的指针，要么使用 `std::launder(p)` 以合法访问对象。  
@@ -323,6 +348,7 @@ static Singleton& getInstance(){
 
 ---
 ### CRTP
+
 在实现多态操作时，首选的方式是使用虚函数。
 但虚函数存在的一定的运行时开销，每个包含虚函数的类都会维护一个`虚函数表(vtable)`，其存储了指向虚函数实现的指针。当调用虚函数时，程序需要通过对象的虚函数表指针查找对应的函数地址，这增加了一次间接寻址操作，相比普通的函数调用略慢。
 且编译器无法对虚函数调用进行**编译期内联优化**，正如如上所说，虚函数调用在运行时根据对象的实际类型决定。
@@ -357,6 +383,31 @@ int main(){
 	func(d);         // 输出 Dervied1::print()
 }
 ```
+
+在C++23标准下的显示对象成员函数时，`CRTP`纯在着坑:
+```cpp
+template <typename Derived>
+struct Base {
+    void foo(this auto&& self) {
+        std::cout << "self is " << typeid(decltype(self)).name() << "\n";
+    }
+};
+struct Derived : Base<Derived> {};
+struct FurtherDerived : Derived {};
+
+auto main() -> int{
+    FurtherDerived d;
+    d.foo();    //gcc下输出self is 14FurtherDerived
+} 
+```
+并非期望的`Derived`类型,更改为传统形式即可：
+```cpp
+void foo() {
+    std::cout << "self is " << typeid(decltype(*static_cast<Derived*(this))).name() << "\n";
+}
+```
+
+
 
 ---
 ### References
