@@ -25,15 +25,15 @@ int main() {
 ```
 
 上述代码可能崩溃的原因在于，MSVC 实现的 `std::string` 与 GCC/Clang 的实现不同（例如成员变量顺序或其他实现细节），导致 ABI 及内存布局不一致，从而引发崩溃。  
-**统一工具链以避免此类问题的发生。**
+**统一工具链以避免此类问题的发生。**  
 
 `win`与`linux`下动态库的路径搜索行为差异：
 win与linux下`.dll`/`.so`搜索路径：
-在win下,`.dll`的搜索路径:
- - .exe当前路径
+在win下,`.dll`的搜索路径:  
+ - .exe当前路径  
  -  系统路径`%SystemRoot%\System32`（64 位系统）或 `%SystemRoot%\SysWOW64`（32 位兼容目录）。
- - Path环境变量
-在linux下,`.so`搜索路径:
+ - Path环境变量  
+在linux下,`.so`搜索路径:  
 - 通过 `-Wl,-rpath,<path>` 嵌入到 ELF 中的路径（**优先级最高**）
 - 用户临时指定的路径（例如 `export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH`）。
 - `/lib`、`/usr/lib`、`/lib64`、`/usr/lib64` 等。
@@ -48,7 +48,7 @@ if(!dl_handle){
 // 通过dlsym(dl_handle,..);获取指定符号的地址
 dlclose(dl_handle);
 ```
-win中对应的函数为`LoadLibraryEx`|`LoadLibrary`|`GetProcAddress`|`FreeLibrary`
+win中对应的函数为`LoadLibraryEx`|`LoadLibrary`|`GetProcAddress`|`FreeLibrary`  
 
 在win下使用`protobuf`时，需要在`.h`中显示添加宏`#define PROTOBUF_USE_DLLS`，表示以`dll`的形式导入其中的函数(`__declspec(dllimport)`),否则会发生链接错误(linux下通常不需要显示指定导入导出)。
 
@@ -384,7 +384,7 @@ int main(){
 }
 ```
 
-在C++23标准下的显示对象成员函数时，`CRTP`纯在着坑:
+在C++23标准下的显示对象成员函数时，`CRTP`纯在着坑: 
 ```cpp
 template <typename Derived>
 struct Base {
