@@ -25,12 +25,14 @@
             "id": "f1fd09a91e70a494",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.8.10"
+                "file": "md/C++最佳实践.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.10"
+              "icon": "lucide-file",
+              "title": "C++最佳实践"
             }
           }
         ],
@@ -178,9 +180,11 @@
   },
   "active": "f1fd09a91e70a494",
   "lastOpenFiles": [
-    "C++最佳实践.md",
-    "md/视觉开发必知.md",
+    "other/后处理核心函数解析.md",
     "md/C++最佳实践.md",
+    "md/视觉开发必知.md",
+    "后处理核心函数解析.md",
+    "C++最佳实践.md",
     "md",
     "视觉开发必知.md",
     "other/git分布式仓库管理详解/git深入及原理.md",
