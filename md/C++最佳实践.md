@@ -435,7 +435,10 @@ do_something(func(), std::shared_ptr<A>(new A));  // 潜在的资源泄漏(执�
 在基操层面上，线程间先行关系相对简单，它依赖于前面所介绍的同步关系：若甲、乙两操作分别由不同线程执行，且它们同步，则甲操作跨线程的先于乙操作发生。这也是可传递关系：若甲操作跨线程的先行于乙操作发生，且乙操作跨线程的先行于丙操作发生，则甲操作跨线程的先行于丙操作发生。
 以上规则都非常重要，它们强制线程间操作服从一定的次序。
 #### 原子操作的内存次序
+原子类型上的操作服从6钟内存次序：`memory_order_relaxed`、`memory_order_consume`、`memory_order_acquire'、`memory_order_release`、`memory_order_acq_rel` 和 `memory_order_seq_cst`。
+其中,`memory_order_seq_cst`是可选的最严格的内存次序，各种原子类型的所有操作都默认遵循该次序，除非特意为某些操作
 
+**先后一致次序**
 
 ---
 ### references
